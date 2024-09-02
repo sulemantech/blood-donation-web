@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../index.css";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -56,19 +57,7 @@ function App() {
             </section>
           </div>
 
-          <footer>
-            <p>
-              If you have any questions or need assistance, please contact our
-              support team at
-              <a href="mailto:info@metafront.net "> info@metafront.net</a>.
-            </p>
-            <p>
-              <Link to="/privacy-policy">Privacy Policy</Link> |
-              <Link to="/terms-of-service">Terms & Conditions</Link> |
-              <Link to="/data-safety-information">Data Safety Information</Link>
-            </p>
-            <p>&copy; 2024 Life Plus. All rights reserved.</p>
-          </footer>
+          <Footer component={"home"}/>
         </div>
       </div>
     </>
