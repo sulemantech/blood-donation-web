@@ -14,7 +14,7 @@ const InfoModal = ({ isOpen, onClose }) => {
           <p>Your account will be marked for deletion. It will be permanently deleted within 3 days.</p>
         </div>
         <div className="modal-actions">
-          <button className="confirm-btn">Confirm</button>
+        <button onClick={() => window.location.reload()} className="confirm-btn">Confirm</button>
           <button className="cancel-btn" onClick={onClose}>Cancel</button>
         </div>
       </div>
