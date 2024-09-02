@@ -1,9 +1,19 @@
 import { useState } from "react";
 import "../index.css";
-import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import InfoModal from "./InfoModal"; // Import the InfoModal component
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent default form submission
+    setIsModalOpen(true); // Open the modal
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Close the modal
+  };
 
   return (
     <>
@@ -11,7 +21,9 @@ function App() {
         <div className="wrapper">
           <div className="headingtop">
             <img height="80%" src="logo.png" alt="Logo" />
-            <h1>Request Account Deletion</h1> <div></div> <div></div>
+            <h1>Request Account Deletion</h1>
+            <div></div>
+            <div></div>
           </div>
           <div className="content">
             <p>
@@ -20,13 +32,14 @@ function App() {
               submit a request for account deletion.
             </p>
 
-            <form action="/submit-deletion-request" method="post">
+            <form onSubmit={handleSubmit}>
               <label htmlFor="email">Email Address or Username</label>
               <input type="email" id="email" name="email" required />
 
               <label>
-                <input type="checkbox" required />I confirm that I want to
-                permanently delete my account and all associated data.
+                <input type="checkbox" required />
+                I confirm that I want to permanently delete my account and all
+                associated data.
               </label>
 
               <button type="submit">Submit Request</button>
@@ -57,9 +70,12 @@ function App() {
             </section>
           </div>
 
-          <Footer component={"home"}/>
+          <Footer component={"home"} />
         </div>
       </div>
+
+      {/* InfoModal Component */}
+      <InfoModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
   );
 }
