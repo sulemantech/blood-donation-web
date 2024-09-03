@@ -16,7 +16,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_PROD_URl}/delete-user?email=${encodeURIComponent(email)}`,
+        `${import.meta.env.VITE_PROD_URl}delete-user?email=${encodeURIComponent(email)}`,
         {
           method: "DELETE",
           headers: {
