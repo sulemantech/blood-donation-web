@@ -7,9 +7,9 @@ const InfoModal = ({ isOpen, onClose , message }) => {
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <button className="modal-close" onClick={onClose}>
-          &times;
-        </button>
+        {/* <button className="modal-close" onClick={onClose}> */}
+          {/* &times; */}
+        {/* </button> */}
         <div className="modal-content">
           <p>{message}</p>
         </div>
