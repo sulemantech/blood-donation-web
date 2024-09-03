@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const InfoModal = ({ isOpen, onClose }) => {
+const InfoModal = ({ isOpen, onClose , message }) => {
   if (!isOpen) return null;
 
   return (
@@ -11,10 +11,10 @@ const InfoModal = ({ isOpen, onClose }) => {
           &times;
         </button>
         <div className="modal-content">
-          <p>Your account will be marked for deletion. It will be permanently deleted within 3 days.</p>
+          <p>{message}</p>
         </div>
         <div className="modal-actions">
-        <button onClick={() => window.location.reload()} className="confirm-btn">Confirm</button>
+        {/* <button onClick={() => window.location.reload()} className="confirm-btn">Confirm</button> */}
           <button className="cancel-btn" onClick={onClose}>Cancel</button>
         </div>
       </div>

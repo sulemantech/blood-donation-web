@@ -1,18 +1,50 @@
 import { useState } from "react";
 import "../index.css";
 import Footer from "./Footer";
-import InfoModal from "./InfoModal"; // Import the InfoModal component
+import InfoModal from "./InfoModal";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [modalMessage, setModalMessage] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
-    setIsModalOpen(true); // Open the modal
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+
+
+    const email = e.target.email.value;
+
+    try {
+      const response = await fetch(
+        `http://localhost:3000/delete-user?email=${encodeURIComponent(email)}`,
+        {
+          method: "DELETE",
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': import.meta.env.VITE_API_KEY, // Include API key in headers
+          },
+        }
+      );
+      const result = await response.text();
+
+      if (response.ok) {
+        setModalMessage(
+          result ||
+            `The account associated with ${email} has been successfully deleted.`
+        );
+      } else {
+        console.log(response);
+        setModalMessage(result || `Unexpected Error occurred`);
+      }
+    } catch (error) {
+      setModalMessage(`An error occurred: ${error.message}`);
+    }
   };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false); // Close the modal
+    setIsModalOpen(false);
+    setModalMessage(""); // Reset the modal message when closing
   };
 
   return (
@@ -22,8 +54,7 @@ function App() {
           <div className="headingtop">
             <img height="80%" src="logo.png" alt="Logo" />
             <h1>Request Account Deletion</h1>
-            <div></div>
-            <div></div>
+            <div></div> <div></div>
           </div>
           <div className="content">
             <p>
@@ -33,13 +64,19 @@ function App() {
             </p>
 
             <form onSubmit={handleSubmit}>
-              <label htmlFor="email">Email Address or Username</label>
-              <input type="email" id="email" name="email" required />
+              <label htmlFor="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
               <label>
-                <input type="checkbox" required />
-                I confirm that I want to permanently delete my account and all
-                associated data.
+                <input type="checkbox" required />I confirm that I want to
+                permanently delete my account and all associated data.
               </label>
 
               <button type="submit">Submit Request</button>
@@ -75,7 +112,11 @@ function App() {
       </div>
 
       {/* InfoModal Component */}
-      <InfoModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <InfoModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        message={modalMessage}
+      />
     </>
   );
 }
