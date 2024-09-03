@@ -11,7 +11,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsModalOpen(true);
-
+console.log(import.meta.env.VITE_PROD_URl)
 
     const email = e.target.email.value;
 
