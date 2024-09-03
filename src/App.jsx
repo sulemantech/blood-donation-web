@@ -17,12 +17,12 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/delete-user?email=${encodeURIComponent(email)}`,
+        `${import.meta.env.VITE_PROD_URl}/delete-user?email=${encodeURIComponent(email)}`,
         {
           method: "DELETE",
           headers: {
             'Content-Type': 'application/json',
-            'x-api-key': import.meta.env.VITE_API_KEY, // Include API key in headers
+            'x-api-key': import.meta.env.VITE_API_KEY,
           },
         }
       );
