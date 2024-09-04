@@ -52,10 +52,11 @@ function App() {
         <div className="wrapper">
           <div className="headingtop">
             <img height="80%" src="logo.png" alt="Logo" />
-            <h1>Request Account Deletion</h1>
+            <h1>Life-Plus Blood Dontaion</h1>
             <div></div> <div></div>
           </div>
           <div className="content">
+          <h2 className="bloodreq">Request Account Deletion</h2>
             <p>
               We value your privacy and understand that you may wish to delete
               your account and associated data. Please follow the steps below to

@@ -46,6 +46,10 @@ body {
   .content {
     padding: 20px;
   }
+  .bloodreq{
+    text-align: left;
+    margin: 0;
+  }
   
   /* Fade in animation */
   @keyframes fadeIn {
