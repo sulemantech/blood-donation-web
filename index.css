@@ -50,7 +50,13 @@ body {
     text-align: left;
     margin: 0;
   }
-  
+  .linked{
+    color: #333;
+  }
+  .linked:hover{
+    color: black;
+    transition: all;
+  }
   /* Fade in animation */
   @keyframes fadeIn {
     from {

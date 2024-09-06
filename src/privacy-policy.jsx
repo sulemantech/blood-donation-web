@@ -1,15 +1,20 @@
 import React from "react";
 import "../index.css";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
+
 
 const PrivacyPolicy = () => {
   return (
     <div className="container">
       <div className="wrapper">
-        <div className="headingtop">
-          <h1>Privacy Policy</h1>
-        </div>
+      <div className="headingtop">
+            <img height="80%" src="logo.png" alt="Logo" />
+            <h1>Life-Plus Blood Dontaion</h1>
+            <div></div> <div></div>
+          </div>
         <div className="content">
+          <h2 className="bloodreq">Privacy Policy</h2>
           <p className="bold">LifePlus Mobile App</p>
           <p>
             <strong>Effective Date:</strong> 13-08-2024
@@ -49,23 +54,23 @@ const PrivacyPolicy = () => {
 
           <h2>5. User Control</h2>
           <p>
-            You have the right to request the deletion of your account and
+            You have the right to request the <Link className="linked" to="/">deletion of your account </Link> and
             personal data at any time by contacting us at +92345192780.
           </p>
 
-          <h2>6. Compliance with Laws</h2>
+          {/* <h2>6. Compliance with Laws</h2>
           <p>
             We comply with applicable data protection laws, including GDPR and
             any other relevant regulations.
-          </p>
+          </p> */}
 
-          <h2>7. Changes to This Privacy Policy</h2>
+          <h2>6. Changes to This Privacy Policy</h2>
           <p>
             We may update this policy from time to time. You will be notified of
             any significant changes.
           </p>
 
-          <h2>8. Contact Information</h2>
+          <h2>7. Contact Information</h2>
           <p>
             For any questions or concerns, please contact us at +923451927809.
           </p>

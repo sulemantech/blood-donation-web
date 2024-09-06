@@ -7,9 +7,12 @@ const DataSafetyInformation = () => {
     <div className="container">
       <div className="wrapper">
         <div className="headingtop">
-          <h1>Data Safety Information</h1>
+          <img height="80%" src="logo.png" alt="Logo" />
+          <h1>Life-Plus Blood Dontaion</h1>
+          <div></div> <div></div>
         </div>
         <div className="content">
+          <h2 className="bloodreq">Data Safety Information</h2>
           <h3>1. Data Collection and Usage</h3>
           <p>
             We collect personal information (Name, Email, Contact Number, Blood
@@ -49,7 +52,7 @@ const DataSafetyInformation = () => {
             us at +923451927809.
           </p>
         </div>
-        <Footer component={"dsi"}/>
+        <Footer component={"dsi"} />
       </div>
     </div>
   );

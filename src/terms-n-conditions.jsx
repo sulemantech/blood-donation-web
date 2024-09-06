@@ -6,10 +6,13 @@ const TermsConditions = () => {
   return (
     <div className="container">
       <div className="wrapper">
-        <div className="headingtop">
-          <h1>Terms & Conditions</h1>
-        </div>
+      <div className="headingtop">
+            <img height="80%" src="logo.png" alt="Logo" />
+            <h1>Life-Plus Blood Dontaion</h1>
+            <div></div> <div></div>
+          </div>
         <div className="content">
+          <h2 className="bloodreq">Terms & Conditions</h2>
           <h2>LifePlus Mobile App</h2>
           <p><strong>Effective Date:</strong> 13-08-2024</p>
           <p>Welcome to the LifePlus application. By using our app, you agree to the following Terms & Conditions:</p>
