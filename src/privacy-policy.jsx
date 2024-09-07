@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
       <div className="wrapper">
       <div className="headingtop">
             <img height="80%" src="logo.png" alt="Logo" />
-            <h1>LifePlus Blood Dontaion App</h1>
+            <h1>LifePlus Blood Donation App</h1>
             <div></div> <div></div>
           </div>
         <div className="content">
