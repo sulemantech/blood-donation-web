@@ -1,10 +1,12 @@
 import React from 'react';
 import '../index.css'; 
 import Footer from './Footer';
+import ScrollToTop from './ScrolltoTop';
 
 const TermsConditions = () => {
   return (
     <div className="container">
+      <ScrollToTop/>
       <div className="wrapper">
       <div className="headingtop">
             <img height="80%" src="logo.png" alt="Logo" />

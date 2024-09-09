@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const PrivacyPolicy = () => {
   return (
     <div className="container">
+      <ScrollToTop/>
       <div className="wrapper">
       <div className="headingtop">
             <img height="80%" src="logo.png" alt="Logo" />
