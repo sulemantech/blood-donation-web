@@ -2,6 +2,7 @@ import React from "react";
 import "../index.css";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import ScrollToTop from "./ScrolltoTop";
 
 
 const PrivacyPolicy = () => {
